@@ -20,6 +20,7 @@ import { HistorymoviesComponent } from './historymovies/historymovies.component'
 import { DocumentarymoviesComponent } from './documentarymovies/documentarymovies.component';
 import { RomanticmoviesComponent } from './romanticmovies/romanticmovies.component';
 import { TvseriesComponent } from './tvseries/tvseries.component';
+import { KidsComponent } from './kids/kids.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TvseriesComponent } from './tvseries/tvseries.component';
     HistorymoviesComponent,
     DocumentarymoviesComponent,
     RomanticmoviesComponent,
-    TvseriesComponent
+    TvseriesComponent,
+    KidsComponent
   ],
   imports: [
     BrowserModule,
