@@ -1,0 +1,20 @@
+.header{
+    background-color: #032541;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: larger;
+}
+
+.btn-outline-success{
+    font-size: large;
+}
+
+@media only screen and (max-width: 768px) {
+    .header{
+        font-size: medium;
+    }
+    .btn-outline-success{
+        font-size: medium;
+    }
+
+}
