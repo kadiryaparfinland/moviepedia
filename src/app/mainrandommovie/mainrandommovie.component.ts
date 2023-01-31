@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataService } from '../services/my-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainrandommovie',
@@ -23,13 +24,9 @@ export class MainrandommovieComponent implements OnInit {
   movieVoteCount: string = '';
   movieGenres: any = [];
 
-
-
-  constructor( private myDataService: MyDataService) { 
+  constructor( private myDataService: MyDataService, private router: Router) { 
     
   }
-
- 
 
   ngOnInit() {
     this.myDataService.getPopularMovies().subscribe((movies) => {
@@ -44,16 +41,11 @@ export class MainrandommovieComponent implements OnInit {
       this.movieVoteCount = 'User Vote Count: ' + this.popularMovies.results[this.randomNumber].vote_count;
       this.movieGenres = this.popularMovies.results[this.randomNumber].genre_ids;
 
-      
-     /*  console.log(this.popularMovies.results[this.randomNumber].title);
-      console.log('randomNumber:' + this.randomNumber);
-
-      for (let item of this.popularMovies.results) {
-        this.popularMoviesPosterPaths.push(item.poster_path);
-        //console.log('poster path: ' + item.poster_path);
-      } */
-
     });
+  }
+
+  goToMovieDetails(id: number){
+    this.router.navigate(['moviedetails', id]);
   }
 
 }

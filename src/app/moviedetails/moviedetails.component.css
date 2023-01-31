@@ -1,0 +1,52 @@
+.home-main-class{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .home-main-class{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .home-main-class{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .home-main-class{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+}
+
+.main-movie-details{
+    height: 600px;
+    background-color: #144272;
+    display: flex;
+
+}
+
+.main-movie-details-image-poster{
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 50px;
+    
+}
+
+.main-movie-details-info {
+    margin-left: 50px;
+    margin-top: 50px;
+    
+}
+h3{
+    color: white;
+    font-weight: bold;
+}

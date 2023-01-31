@@ -9,7 +9,7 @@
         <h6 class="random-movie-info-text">{{movieVoteCount}}</h6>
         <h6 class="random-movie-info-text overview">Overview</h6>
         <p class="random-movie-info-text overview">{{movieOverview}}</p>
-        <button type="button" class="btn btn-outline-light">Go to Movie</button>
+        <button type="button" class="btn btn-outline-light" (click)="goToMovieDetails(movieId)">Go to Movie</button>
     </div>
 
 
@@ -23,3 +23,5 @@
         </li>
     </ul> -->
 </div>
+
+<router-outlet></router-outlet>
