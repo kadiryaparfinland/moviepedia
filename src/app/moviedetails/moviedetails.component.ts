@@ -24,19 +24,11 @@ export class MoviedetailsComponent implements OnInit {
 
   movieOriginalLanguage: string = '';
 
-  movieGenreIds: any = [];
-  movieGenreId: string = '';
   movieGenreNames: any = [];
-  movieGenreName: string = '';
-  movieGenreNameList: string = '';
 
   movieProductionCountries: any = [];
   movieProductionCountry: string = '';
   movieProductionCountryList: string = '';
-
-  movieSpokenLanguages: any = [];
-  movieSpokenLanguage: string = '';
-  movieSpokenLanguageList: string = '';
 
   movieStatus: string = '';
   movieTagline: string = '';
@@ -62,35 +54,31 @@ export class MoviedetailsComponent implements OnInit {
       this.moviePosterPath += this.movie.poster_path;
       this.movieBackdropPath += this.movie.backdrop_path;
       this.movieOverview = this.movie.overview;
-      this.movieReleaseDate = 'Release Date: ' + this.movie.release_date;
-      this.movieVoteAverage = 'User Score: ' + this.movie.vote_average;
-      this.movieVoteCount = 'User Votes: ' + this.movie.vote_count;
-      this.movieOriginalLanguage = 'Original Language: ' + this.movie.original_language;
-      this.movieGenreIds = this.movie.genre_ids;
-      this.movieProductionCountries = this.movie.production_countries;
-      this.movieSpokenLanguages = this.movie.spoken_languages;
+      this.movieReleaseDate = this.movie.release_date;
+      this.movieVoteCount = this.movie.vote_count;
+      this.movieVoteAverage = this.movie.vote_average.toFixed(1) + '/10';
+      this.movieOriginalLanguage = 'Original Language: ' + this.movie.original_language.toUpperCase();
+      
       this.movieStatus = 'Status: ' + this.movie.status;
-      this.movieTagline = 'Tagline: ' + this.movie.tagline;
-      this.movieBudget = 'Budget: ' + this.movie.budget;
-      this.movieRevenue = 'Revenue: ' + this.movie.revenue;
-      this.movieRuntime = 'Runtime: ' + this.movie.runtime;
+      this.movieTagline = this.movie.tagline;
+
+      this.movieBudget = 'Budget: ' + this.movie.budget.toLocaleString('en-US') + ' USD';
+      this.movieRevenue = 'Revenue: ' + this.movie.revenue.toLocaleString('en-US') + ' USD';
+      this.movieRuntime = this.movie.runtime + ' minutes';
       this.movieHomepage = 'Homepage: ' + this.movie.homepage;
       this.movieImdbId = 'IMDB ID: ' + this.movie.imdb_id;
-      this.movieGenreNames = this.movie.genres;
-      this.movieGenreNameList = 'Genres: ';
+
+      for (let i = 0; i < this.movie.genres.length; i++) {
+        this.movieGenreNames.push(this.movie.genres[i].name);
+      }
+      this.movieGenreNames = this.movieGenreNames.join(', ');
+
+      this.movieProductionCountries = this.movie.production_countries;
       this.movieProductionCountryList = 'Production Countries: ';
-      this.movieSpokenLanguageList = 'Spoken Languages: ';
-      this.movieGenreName = '';
       this.movieProductionCountry = '';
-      this.movieSpokenLanguage = '';
-      this.movieGenreId = '';
-      this.movieGenreNameList = '';
       this.movieProductionCountryList = '';
-      this.movieSpokenLanguageList = '';
 
     });
-
- 
 
   }
 
