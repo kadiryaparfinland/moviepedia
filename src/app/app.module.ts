@@ -22,6 +22,7 @@ import { RomanticmoviesComponent } from './romanticmovies/romanticmovies.compone
 import { TvseriesComponent } from './tvseries/tvseries.component';
 import { KidsComponent } from './kids/kids.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+import { MovieCastComponent } from './movie-cast/movie-cast.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
     RomanticmoviesComponent,
     TvseriesComponent,
     KidsComponent,
-    MoviedetailsComponent
+    MoviedetailsComponent,
+    MovieCastComponent
   ],
   imports: [
     BrowserModule,

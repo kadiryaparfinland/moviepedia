@@ -1,0 +1,21 @@
+<div class="top-rated-movies-main">
+    <div class="top-rated-movies-main-title" >
+        <h4>Movie Cast</h4>
+    </div>
+
+    <div class="top-rated-movies-main-scroll-list">
+        <div class="top-rated-movies-main-content" *ngFor="let cast of movieCastsList">
+
+            <div class="card card-design" style="width: 8rem; height: 20rem;"(click)="goToMovieDetails(cast.id)">
+                <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{cast.name}}</h5>
+                  <p class="card-text">{{cast.character}}</p>
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+    
+</div>

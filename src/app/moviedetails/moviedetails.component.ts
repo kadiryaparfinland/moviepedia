@@ -7,13 +7,13 @@ import { MyDataService } from '../services/my-data.service';
   selector: 'app-moviedetails',
   templateUrl: './moviedetails.component.html',
   styleUrls: ['./moviedetails.component.css'],
-  
 })
 export class MoviedetailsComponent implements OnInit {
 
   movie: any;  //this is the object that will hold the movie details
 
   movieId: string = '';
+  
   movieTitle: string = '';
   moviePosterPath: string = 'https://image.tmdb.org/t/p/w500';
   movieBackdropPath: string = 'https://image.tmdb.org/t/p/w500';

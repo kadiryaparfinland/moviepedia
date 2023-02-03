@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataService } from '../services/my-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-actionmovies',
@@ -17,7 +18,7 @@ export class ActionmoviesComponent implements OnInit {
   movieVoteAverage: string = '';
   moviePosterPath: string = 'https://image.tmdb.org/t/p/w500';
 
-  constructor(private myDataService: MyDataService) { }
+  constructor(private myDataService: MyDataService, private router: Router) { }
 
   ngOnInit() {
     this.myDataService.getActionMovies().subscribe((movies) => {
@@ -38,5 +39,8 @@ export class ActionmoviesComponent implements OnInit {
     });
   }
   
+  goToMovieDetails(id: number){
+    this.router.navigate(['moviedetails', id]);
+  }
 
 }
