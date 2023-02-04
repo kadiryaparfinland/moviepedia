@@ -25,6 +25,7 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MovieCastComponent } from './movie-cast/movie-cast.component';
 import { MovieImagesComponent } from './movie-images/movie-images.component';
 import { MovieYoutubeFragmentComponent } from './movie-youtube-fragment/movie-youtube-fragment.component';
+import { SimilarMoviesComponent } from './similar-movies/similar-movies.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MovieYoutubeFragmentComponent } from './movie-youtube-fragment/movie-yo
     MoviedetailsComponent,
     MovieCastComponent,
     MovieImagesComponent,
-    MovieYoutubeFragmentComponent
+    MovieYoutubeFragmentComponent,
+    SimilarMoviesComponent
   ],
   imports: [
     BrowserModule,

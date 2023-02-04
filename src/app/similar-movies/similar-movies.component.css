@@ -13,21 +13,22 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .card-design{
-    margin-right: 15px;
+    margin-right: 10px;
     cursor: pointer;
-    margin-bottom: 20px;
+    width: 12rem; 
+    height: 25rem;
 }
 
-.card-title{
-    font-weight: bold;
-    font-size: 16px;
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
 }
-.card-text{
-    font-size: 14px;
+.title-card-title{
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
@@ -63,3 +64,6 @@
         margin-bottom: 15px;
     }
 }
+
+
+
