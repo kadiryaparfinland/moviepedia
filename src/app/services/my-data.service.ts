@@ -59,6 +59,13 @@ export class MyDataService {
   getMovieCasts(movieId: string) {
     return this.http.get('https://api.themoviedb.org/3/movie/'+movieId+'/credits?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
   }
+
+  getMovieImages(movieId: string) {
+    return this.http.get('https://api.themoviedb.org/3/movie/'+movieId+'/images?api_key=dc92a7524c83f242a3237b2222941f00');
+  }
   
+  getMovieVideos(movieId: string) {
+    return this.http.get('https://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
 
 }

@@ -23,6 +23,8 @@ import { TvseriesComponent } from './tvseries/tvseries.component';
 import { KidsComponent } from './kids/kids.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MovieCastComponent } from './movie-cast/movie-cast.component';
+import { MovieImagesComponent } from './movie-images/movie-images.component';
+import { MovieYoutubeFragmentComponent } from './movie-youtube-fragment/movie-youtube-fragment.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { MovieCastComponent } from './movie-cast/movie-cast.component';
     TvseriesComponent,
     KidsComponent,
     MoviedetailsComponent,
-    MovieCastComponent
+    MovieCastComponent,
+    MovieImagesComponent,
+    MovieYoutubeFragmentComponent
   ],
   imports: [
     BrowserModule,
