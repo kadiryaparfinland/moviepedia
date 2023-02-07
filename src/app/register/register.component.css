@@ -1,0 +1,16 @@
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #2C74B3;
+}
+
+.btn-info{
+    background-color: #0A2647;
+    border-color: #2C74B3;
+    color: white;
+}
+
+a{
+    color: #0A2647;
+}

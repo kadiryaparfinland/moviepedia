@@ -22,10 +22,21 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="kids" style="color: white">Kids</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="kids" style="color: white">My List</a>
+          </li>
       </ul>
       <form class="d-flex" role="search">
-        <button class="btn btn-outline-success" type="submit" style="color: white; margin-right: 20px;" href="home" >Search</button>
-        <button class="btn btn-outline-success" type="submit" style="color: white" href="tvseries">Login</button>
+        <button class="btn btn-outline-success" type="submit" style="color: white; margin-right: 20px;" >
+          <a class="nav-link active" aria-current="page" href="" style="color: white">Search</a>
+        </button>
+        
+        <button *ngIf="(fireAuth.user | async)"  class="btn btn-outline-success" type="submit" style="color: white" (click)="logout()">
+          Logout
+        </button>
+        <button *ngIf="!(fireAuth.user | async)" class="btn btn-outline-success" type="submit" style="color: white" href="login">
+          <a class="nav-link active" aria-current="page" href="login" style="color: white">Login</a>
+        </button>
       </form>
     </div>
   </div>

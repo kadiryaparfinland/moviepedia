@@ -40,6 +40,7 @@ export class HistorymoviesComponent implements OnInit {
   
   goToMovieDetails(id: number){
     this.router.navigate(['moviedetails', id]);
+    this.router.navigate(['moviedetails', id]).then(page => {window.scrollTo(0, 0); })
   }
 
 }

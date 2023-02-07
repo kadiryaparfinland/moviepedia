@@ -96,14 +96,14 @@
                   </div>
 
                   <div class="button-group">
-                    <button type="button" class="btn btn-outline-light button">
+                    <button type="button" class="btn btn-outline-light button" (click)="goToTrailer(trailer)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                           </svg>
                         Play Trailer
                     </button>
 
-                        <button type="button" class="btn btn-outline-light button" style="margin-left: 10px;">
+                        <button *ngIf="!addedToMyList" (click)="addToMyList()" type="button" class="btn btn-outline-light button" style="margin-left: 10px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
                                 <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
@@ -111,12 +111,18 @@
                               </svg>
                             Add to List
                         </button>
+                        <button *ngIf="addedToMyList" (click)="removeFromMyList()" type="button" class="btn btn-outline-light button" style="margin-left: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                            Added to List
+                        </button>
 
-                        <button type="button" class="btn btn-outline-light button" style="margin-left: 10px;">
+                        <button type="button" class="btn btn-outline-light button" style="margin-left: 10px;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
                               </svg>
-                                Movie Homepage
+                                <a (click)="goToMovieHomepage(movieHomepage)">Movie Homepage</a>
                         </button>
 
                         <button type="button" class="btn btn-outline-light button" style="margin-left: 10px;">
@@ -130,11 +136,18 @@
 
             </div>
         </div>
-
-        <app-movie-cast></app-movie-cast>
-        <app-movie-images></app-movie-images>
-        <app-movie-youtube-fragment></app-movie-youtube-fragment>
-        <app-similar-movies></app-similar-movies>
+        <div>
+            <app-movie-cast></app-movie-cast>
+        </div>
+        <div>
+            <app-movie-images></app-movie-images>
+        </div>
+        <div #trailer>
+            <app-movie-youtube-fragment></app-movie-youtube-fragment>
+        </div>
+        <div>
+            <app-similar-movies></app-similar-movies>
+        </div>
     </div>
 
 

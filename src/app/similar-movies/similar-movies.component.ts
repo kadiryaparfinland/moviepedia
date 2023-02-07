@@ -19,10 +19,7 @@ export class SimilarMoviesComponent implements OnInit {
   moviePosterPath: string = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private myDataService: MyDataService, private route: ActivatedRoute, private router: Router) { 
-    route.params.subscribe(val => {
-      // put the code from `ngOnInit` here
-      
-    });
+    
   }
 
   ngOnInit() { 
@@ -40,9 +37,17 @@ export class SimilarMoviesComponent implements OnInit {
   }
   
   goToMovieDetails(id: number){
-    this.router.navigate(['moviedetails', id]).then(page => {window.location.reload(); })
-    
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    }
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['moviedetails', id], { queryParams: { index: 1 } });
+    this.router.navigate(['moviedetails', id]).then(page => {window.scrollTo(0, 0); })
+      
   }
-
+ /* goToPageZero(id: number){
+    this.router.navigate(['moviedetails', id]).then(page => {window.scrollTo(0, 0); })
+    
+  } */
 }
 

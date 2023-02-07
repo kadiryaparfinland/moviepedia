@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "moviepedia-296201"
+  },
+  "targets": {
+    "moviepedia-296201": {
+      "hosting": {
+        "moviepedia": [
+          "moviepedia-296201"
+        ]
+      }
+    }
+  }
+}
