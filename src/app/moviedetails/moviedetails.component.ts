@@ -6,6 +6,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { PLATFORM_ID } from '@angular/core';
 import { Movie } from '../model/movie';
 import { DataService } from '../shared/data.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { BehaviorSubject, first } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
 
@@ -49,19 +52,38 @@ export class MoviedetailsComponent implements OnInit {
   movieImdbId: string = '';
 
   addedToMyList: boolean = false;
+  addedToMyListDocumentNumber: string = '';
+  userUid: string = '';
+  isLoggedIn: boolean = false; 
 
-  private firestore: AngularFireModule;
+
+  //private firestore: AngularFireModule;
   
-  constructor(private route: ActivatedRoute, private http: HttpClient, private myDataService: MyDataService, private data: DataService) { 
+  constructor(private route: ActivatedRoute, private http: HttpClient, private myDataService: MyDataService, private data: DataService,
+    public fireAuth: AngularFireAuth, private afs: AngularFirestore) { 
     
-    this.firestore = new AngularFireModule(PLATFORM_ID);
+    //this.firestore = new AngularFireModule(PLATFORM_ID);
+
 
     
   }
 
+
+
   ngOnInit(): void {
 
     this.movieId = this.route.snapshot.params['id'];
+    //this.findUserUid(); 
+
+    this.fireAuth.authState.pipe(first()).subscribe(
+      user => {
+        this.isLoggedIn = !!user;
+        user ? this.userUid = user.uid : this.userUid = '';
+        this.getAllMovieInfoFromMyList();  
+      }
+    );
+    
+    //
 
     this.myDataService.getMovieDetails(this.movieId).subscribe((movie) => {
 
@@ -110,16 +132,61 @@ export class MoviedetailsComponent implements OnInit {
   }
 
   addToMyList() {
-    this.addedToMyList = true;
-    this.movieObject.movieId = this.movieId;
-    this.data.addMovieToMyList(this.movieObject);
-    //this.myDataService.addToMyList(this.movie);
+    if(this.isLoggedIn) {
+      this.addedToMyList = true;
+      this.movieObject.movieId = this.movieId;
+
+      this.afs
+        .collection('/UsersMyListData')
+        .doc(this.userUid)
+        .collection('movie_list')
+        .doc()
+        .set(this.movieObject);
+    }
+    else{
+      return alert('Please login to add movie to your list');
+    }
   }
   removeFromMyList() {
     this.addedToMyList = false;
-    this.data.removeMovieFromMyList(this.movieObject);
-    //this.myDataService.addToMyList(this.movie);
+    
+      //console.log(this.userUid);
+      this.afs
+        .collection('/UsersMyListData')
+        .doc(this.userUid)
+        .collection('movie_list')
+        .doc(this.addedToMyListDocumentNumber)
+        .delete();
+    
   }
+
+  getAllMovieInfoFromMyList() {
+    //this method checks if the movie is already in the user's list
+
+    this.afs
+        .collection('/UsersMyListData')
+        .doc(this.userUid)
+        .collection('movie_list')
+        .get()
+        .subscribe((querySnapshot) => {
+
+          querySnapshot.forEach((doc) => {
+            if(this.movieId == doc.data()['movieId'].toString()) {
+              this.addedToMyList = true;
+              this.addedToMyListDocumentNumber = doc.id;
+            }
+          } );
+
+        });
+    
+  } 
+
+  /* findUserUid() {
+    this.fireAuth.currentUser.then((user) => {
+      this.userUid = user!.uid;
+      console.log('user uid:' + this.userUid);
+    });
+  } */
 
   }
 

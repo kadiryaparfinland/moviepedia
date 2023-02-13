@@ -1,27 +1,53 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Movie } from '../model/movie';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from '../shared/auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
+  
+  userUid: string = '';
 
-  constructor( private afs : AngularFirestore) { }
+  constructor(
+    private afs: AngularFirestore,
+    public fireAuth: AngularFireAuth
+  ) {}
 
-  //add movie info to firestore
-  addMovieToMyList(movie: Movie) {
-    return this.afs.collection('/UsersMyListData').doc().set(movie);
-  }
-
-//remove movie info from firestore
-  removeMovieFromMyList(movie: Movie) {
-    return this.afs.collection('UsersMyListData').doc().delete();
-  }
-
-  /*   //get movie info from firestore
-  getAllMovieInfoFromMyList(movie: Movie) {
-    return this.afs.collection('UsersMyListData').doc().snapshotChanges();
+  /* findUserUid() {
+    this.fireAuth.currentUser.then((user) => {
+      this.userUid = user!.uid;
+      console.log('user uid:' + this.userUid);
+    });
   } */
+
+/*   //add movie info to firestore
+  addMovieToMyList(movie: Movie) {
+        return this.afs
+        .collection('/UsersMyListData')
+        .doc(this.userUid)
+        .collection('movie_list')
+        .doc()
+        .set(movie);
+  } */
+
+/*   //remove movie info from firestore
+  removeMovieFromMyList(documentId: string) {
+    this.fireAuth.currentUser.then((user) => {
+      this.userUid = user!.uid;
+      //console.log(this.userUid);
+      return this.afs
+        .collection('/UsersMyListData')
+        .doc(this.userUid)
+        .collection('movie_list')
+        .doc(documentId)
+        .delete();
+    });
+    //return this.afs.collection('UsersMyListData').doc().delete();
+  } */
+
+ 
 
 }
