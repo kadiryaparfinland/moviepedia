@@ -5,6 +5,7 @@ import { KidsComponent } from './kids/kids.component';
 import { LoginComponent } from './login/login.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { RegisterComponent } from './register/register.component';
+import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.component';
 import { TvseriesComponent } from './tvseries/tvseries.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'moviedetails/:id', component: MoviedetailsComponent},
+  { path: 'tv-series-details/:id', component: TvSeriesDetailsComponent},
 ];
 
 @NgModule({

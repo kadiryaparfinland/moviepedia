@@ -41,6 +41,11 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { RegisterComponent } from './register/register.component';
+import { MainRandomTvSeriesComponent } from './main-random-tv-series/main-random-tv-series.component';
+import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.component';
+import { TopRatedTvSeriesComponent } from './top-rated-tv-series/top-rated-tv-series.component';
+import { PopularTvSeriesComponent } from './popular-tv-series/popular-tv-series.component';
+import { ActionTvSeriesComponent } from './action-tv-series/action-tv-series.component';
 
 
 @NgModule({
@@ -69,6 +74,11 @@ import { RegisterComponent } from './register/register.component';
     SimilarMoviesComponent,
     LoginComponent,
     RegisterComponent,
+    MainRandomTvSeriesComponent,
+    TvSeriesDetailsComponent,
+    TopRatedTvSeriesComponent,
+    PopularTvSeriesComponent,
+    ActionTvSeriesComponent,
   ],
   imports: [
     BrowserModule,

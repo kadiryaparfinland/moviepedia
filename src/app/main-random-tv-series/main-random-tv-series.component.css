@@ -1,0 +1,90 @@
+.random-movie-main{
+    height: 400px;
+    background-color: #5B8FB9;
+}
+
+.random-movie-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.random-movie-image-class{
+    height: 300px;
+    margin: 30px;
+}
+
+.random-movie-info{
+    margin-top: 20px;
+    margin-right: 50px;
+    color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+   
+    .random-movie-image-class{
+        height: 200px;
+        margin: 30px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .random-movie-main{
+        height: 200px;
+    }
+
+    .random-movie-info{
+        margin-top: 20px;
+        margin-right: 20px;
+        color: white;
+    }
+
+    .random-movie-image-class{
+        height: 150px;
+        margin: 30px;
+    }
+
+    .random-movie-info-text{
+        font-size: smaller;
+    }
+
+    .overview{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 425px) {
+
+    .random-movie-main{
+        height: 150px;
+    }
+
+    .random-movie-info{
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .random-movie-image-class{
+        height: 100px;
+        margin: 10px;
+    }
+
+    .random-movie-info-text{
+        font-size: 10px;
+    }
+
+    .overview{
+        display: none;
+    }
+
+    .button{
+
+    }
+
+
+}
+
