@@ -46,6 +46,14 @@ import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.
 import { TopRatedTvSeriesComponent } from './top-rated-tv-series/top-rated-tv-series.component';
 import { PopularTvSeriesComponent } from './popular-tv-series/popular-tv-series.component';
 import { ActionTvSeriesComponent } from './action-tv-series/action-tv-series.component';
+import { SciFicTvSeriesComponent } from './sci-fic-tv-series/sci-fic-tv-series.component';
+import { FamilyTvSeriesComponent } from './family-tv-series/family-tv-series.component';
+import { ComedyTvSeriesComponent } from './comedy-tv-series/comedy-tv-series.component';
+import { WarTvSeriesComponent } from './war-tv-series/war-tv-series.component';
+import { CrimeTvSeriesComponent } from './crime-tv-series/crime-tv-series.component';
+import { WesternTvSeriesComponent } from './western-tv-series/western-tv-series.component';
+import { DocumentaryTvSeriesComponent } from './documentary-tv-series/documentary-tv-series.component';
+import { DramaTvSeriesComponent } from './drama-tv-series/drama-tv-series.component';
 
 
 @NgModule({
@@ -79,6 +87,14 @@ import { ActionTvSeriesComponent } from './action-tv-series/action-tv-series.com
     TopRatedTvSeriesComponent,
     PopularTvSeriesComponent,
     ActionTvSeriesComponent,
+    SciFicTvSeriesComponent,
+    FamilyTvSeriesComponent,
+    ComedyTvSeriesComponent,
+    WarTvSeriesComponent,
+    CrimeTvSeriesComponent,
+    WesternTvSeriesComponent,
+    DocumentaryTvSeriesComponent,
+    DramaTvSeriesComponent,
   ],
   imports: [
     BrowserModule,

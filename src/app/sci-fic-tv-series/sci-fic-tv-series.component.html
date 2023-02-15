@@ -1,0 +1,23 @@
+<div class="top-rated-movies-main">
+    <div class="top-rated-movies-main-title" >
+        <h4>Sci-Fic Tv Series</h4>
+    </div>
+
+    <div class="top-rated-movies-main-scroll-list">
+        <div class="top-rated-movies-main-content" *ngFor="let movie of topRatedMoviesList">
+
+            <div class="card-design" (click)="goToMovieDetails(movie.id)">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                <div class="card-body">
+                  <h6 class="card-title">User Score: {{movie.vote_average}}</h6>
+                  <h6 class="card-title">Date: {{movie.first_air_date}}</h6>
+                  <h6 class="card-title title-card-title">{{movie.name}}</h6>
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+    
+</div>
+
