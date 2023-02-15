@@ -68,22 +68,25 @@ export class MoviedetailsComponent implements OnInit {
     
   }
 
+  //this.findUserUid(); //this method checks if the user is logged in
+  getUid() {
+    this.fireAuth.authState.pipe(first()).subscribe(
+      user => {
+        this.isLoggedIn = !!user;
+        user ? this.userUid = user.uid : this.userUid = '';
+        this.getAllMovieInfoFromMyList(); //this method checks if the movie is already in the user's list
+      }
+    );
+  }
+
 
 
   ngOnInit(): void {
 
     this.movieId = this.route.snapshot.params['id'];
-    //this.findUserUid(); 
 
-    this.fireAuth.authState.pipe(first()).subscribe(
-      user => {
-        this.isLoggedIn = !!user;
-        user ? this.userUid = user.uid : this.userUid = '';
-        this.getAllMovieInfoFromMyList();  
-      }
-    );
-    
-    //
+    this.getUid();
+   
 
     this.myDataService.getMovieDetails(this.movieId).subscribe((movie) => {
 
@@ -132,6 +135,7 @@ export class MoviedetailsComponent implements OnInit {
   }
 
   addToMyList() {
+    this.getUid();
     if(this.isLoggedIn) {
       this.addedToMyList = true;
       this.movieObject.movieId = this.movieId;
@@ -148,6 +152,7 @@ export class MoviedetailsComponent implements OnInit {
     }
   }
   removeFromMyList() {
+    this.getUid();
     this.addedToMyList = false;
     
       //console.log(this.userUid);

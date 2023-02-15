@@ -23,7 +23,7 @@ export class MovieYoutubeFragmentComponent implements OnInit {
   ngOnInit() {
 
     this.movieId = this.route.snapshot.params['id'];
-    console.log(this.movieId);
+    //console.log(this.movieId);
 
     this.myDataService.getMovieVideos(this.movieId).subscribe((videos) => {
 
@@ -36,7 +36,7 @@ export class MovieYoutubeFragmentComponent implements OnInit {
         }
       } 
       this.movieTrailerPathSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.movieTrailerPath);
-          console.log(this.movieTrailerPathSafeUrl.toString());
+          //console.log(this.movieTrailerPathSafeUrl.toString());
     });
   }
   
