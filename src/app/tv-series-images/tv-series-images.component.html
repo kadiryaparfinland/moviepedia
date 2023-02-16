@@ -1,0 +1,14 @@
+<div class="movie-images-main-container">
+    <div>
+      <h4>Tv Series Images</h4>
+    </div>
+    <div class="movie-images-container">
+      <div *ngFor="let imageSrc of movieImagesList">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ imageSrc.file_path }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  

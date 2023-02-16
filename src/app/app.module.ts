@@ -54,6 +54,11 @@ import { CrimeTvSeriesComponent } from './crime-tv-series/crime-tv-series.compon
 import { WesternTvSeriesComponent } from './western-tv-series/western-tv-series.component';
 import { DocumentaryTvSeriesComponent } from './documentary-tv-series/documentary-tv-series.component';
 import { DramaTvSeriesComponent } from './drama-tv-series/drama-tv-series.component';
+import { TvSeriesMainDetailsComponent } from './tv-series-main-details/tv-series-main-details.component';
+import { TvSeriesCastComponent } from './tv-series-cast/tv-series-cast.component';
+import { TvSeriesImagesComponent } from './tv-series-images/tv-series-images.component';
+import { TvSeriesYoutubeTrailerComponent } from './tv-series-youtube-trailer/tv-series-youtube-trailer.component';
+import { SimilarTvSeriesComponent } from './similar-tv-series/similar-tv-series.component';
 
 
 @NgModule({
@@ -95,6 +100,11 @@ import { DramaTvSeriesComponent } from './drama-tv-series/drama-tv-series.compon
     WesternTvSeriesComponent,
     DocumentaryTvSeriesComponent,
     DramaTvSeriesComponent,
+    TvSeriesMainDetailsComponent,
+    TvSeriesCastComponent,
+    TvSeriesImagesComponent,
+    TvSeriesYoutubeTrailerComponent,
+    SimilarTvSeriesComponent,
   ],
   imports: [
     BrowserModule,

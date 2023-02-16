@@ -115,6 +115,25 @@ export class MyDataService {
   getDramaTvSeries() {
     return this.http.get('https://api.themoviedb.org/3/discover/tv?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=18&include_null_first_air_dates=false');
   }
+
+  getTvSeriesDetails(tvSeriesId: string) {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
   
+  getTvSeriesCasts(tvSeriesId: string) {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'/credits?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
+
+  getTvSeriesImages(tvSeriesId: string) {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'/images?api_key=dc92a7524c83f242a3237b2222941f00');
+  }
+
+  getTvSeriesVideos(tvSeriesId: string) {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'/videos?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
+
+  getSimilarTvSeries(tvSeriesId: string) {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'/similar?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&page=1');
+  }
 
 }

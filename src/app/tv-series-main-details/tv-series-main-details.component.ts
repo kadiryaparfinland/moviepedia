@@ -10,14 +10,12 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BehaviorSubject, first } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
-
-
 @Component({
-  selector: 'app-moviedetails',
-  templateUrl: './moviedetails.component.html',
-  styleUrls: ['./moviedetails.component.css'],
+  selector: 'app-tv-series-main-details',
+  templateUrl: './tv-series-main-details.component.html',
+  styleUrls: ['./tv-series-main-details.component.css']
 })
-export class MoviedetailsComponent implements OnInit {
+export class TvSeriesMainDetailsComponent implements OnInit {
 
   movieList : Movie[] = [];  // this will hold the list of movies using the model class
   movieObject: Movie = { movieId: ''};  // this will hold the movie details using the model class
@@ -56,6 +54,9 @@ export class MoviedetailsComponent implements OnInit {
   userUid: string = '';
   isLoggedIn: boolean = false; 
 
+  tvSeriesNumberofEpisodes: string = '';
+  tvSeriesNumberofSeasons: string = '';
+
 
   //private firestore: AngularFireModule;
   
@@ -88,14 +89,14 @@ export class MoviedetailsComponent implements OnInit {
     this.getUid();
    
 
-    this.myDataService.getMovieDetails(this.movieId).subscribe((movie) => {
+    this.myDataService.getTvSeriesDetails(this.movieId).subscribe((movie) => {
 
       this.movie = movie;
-      this.movieTitle = this.movie.title;
+      this.movieTitle = this.movie.original_name;
       this.moviePosterPath += this.movie.poster_path;
       this.movieBackdropPath += this.movie.backdrop_path;
       this.movieOverview = this.movie.overview;
-      this.movieReleaseDate = this.movie.release_date;
+      this.movieReleaseDate = this.movie.first_air_date;
       this.movieVoteCount = this.movie.vote_count;
       this.movieVoteAverage = this.movie.vote_average.toFixed(1) + '/10';
       this.movieOriginalLanguage = 'Original Language: ' + this.movie.original_language.toUpperCase();
@@ -103,10 +104,11 @@ export class MoviedetailsComponent implements OnInit {
       this.movieStatus = 'Status: ' + this.movie.status;
       this.movieTagline = this.movie.tagline;
 
-      this.movieBudget = 'Budget: ' + this.movie.budget.toLocaleString('en-US') + ' USD';
-      this.movieRevenue = 'Revenue: ' + this.movie.revenue.toLocaleString('en-US') + ' USD';
-      this.movieRuntime = this.movie.runtime + ' minutes';
+      //this.movieBudget = 'Budget: ' + this.movie.budget.toLocaleString('en-US') + ' USD';
+      //this.movieRevenue = 'Revenue: ' + this.movie.revenue.toLocaleString('en-US') + ' USD';
+      this.movieRuntime = this.movie.episode_run_time + ' minutes';
       this.movieHomepage = this.movie.homepage;
+      //console.log("tv home page:" + this.movieHomepage);
       this.movieImdbId = 'IMDB ID: ' + this.movie.imdb_id;
 
       for (let i = 0; i < this.movie.genres.length; i++) {
@@ -119,7 +121,8 @@ export class MoviedetailsComponent implements OnInit {
       this.movieProductionCountry = '';
       this.movieProductionCountryList = '';
 
-      
+      this.tvSeriesNumberofEpisodes = 'Number of Episodes: ' + this.movie.number_of_episodes;
+      this.tvSeriesNumberofSeasons = 'Number of Seasons: ' + this.movie.number_of_seasons;
 
     });
 
@@ -128,11 +131,12 @@ export class MoviedetailsComponent implements OnInit {
   goToMovieHomepage(url: string) {
   
     if(url == null) {
-      return alert('Homepage is not available for this movie');
+      return alert('Homepage is not available for this tv series');
     }
     else{
       window.open(url, '_blank');
     }
+    
   }
 
   goToTrailer(el: HTMLElement) {
@@ -148,7 +152,7 @@ export class MoviedetailsComponent implements OnInit {
       this.afs
         .collection('/UsersMyListData')
         .doc(this.userUid)
-        .collection('movie_list')
+        .collection('tv_series_list')
         .doc()
         .set(this.movieObject);
     }
@@ -164,7 +168,7 @@ export class MoviedetailsComponent implements OnInit {
       this.afs
         .collection('/UsersMyListData')
         .doc(this.userUid)
-        .collection('movie_list')
+        .collection('tv_series_list')
         .doc(this.addedToMyListDocumentNumber)
         .delete();
     
@@ -176,7 +180,7 @@ export class MoviedetailsComponent implements OnInit {
     this.afs
         .collection('/UsersMyListData')
         .doc(this.userUid)
-        .collection('movie_list')
+        .collection('tv_series_list')
         .get()
         .subscribe((querySnapshot) => {
 
@@ -191,12 +195,4 @@ export class MoviedetailsComponent implements OnInit {
     
   } 
 
-  /* findUserUid() {
-    this.fireAuth.currentUser.then((user) => {
-      this.userUid = user!.uid;
-      console.log('user uid:' + this.userUid);
-    });
-  } */
-
-  }
-
+}
