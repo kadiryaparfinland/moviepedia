@@ -59,6 +59,9 @@ import { TvSeriesCastComponent } from './tv-series-cast/tv-series-cast.component
 import { TvSeriesImagesComponent } from './tv-series-images/tv-series-images.component';
 import { TvSeriesYoutubeTrailerComponent } from './tv-series-youtube-trailer/tv-series-youtube-trailer.component';
 import { SimilarTvSeriesComponent } from './similar-tv-series/similar-tv-series.component';
+import { MainRandomKidsComponent } from './main-random-kids/main-random-kids.component';
+import { TopRatedKidMoviesComponent } from './top-rated-kid-movies/top-rated-kid-movies.component';
+import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movies.component';
 
 
 @NgModule({
@@ -105,6 +108,9 @@ import { SimilarTvSeriesComponent } from './similar-tv-series/similar-tv-series.
     TvSeriesImagesComponent,
     TvSeriesYoutubeTrailerComponent,
     SimilarTvSeriesComponent,
+    MainRandomKidsComponent,
+    TopRatedKidMoviesComponent,
+    PopularKidMoviesComponent,
   ],
   imports: [
     BrowserModule,

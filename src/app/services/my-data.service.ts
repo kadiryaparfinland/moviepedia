@@ -136,4 +136,12 @@ export class MyDataService {
     return this.http.get('https://api.themoviedb.org/3/tv/'+tvSeriesId+'/similar?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&page=1');
   }
 
+  getPopularKidMovies() {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=16%2C10751');
+  }
+  
+  getTopRatedKidMovies() {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_genres=16%2C10751');
+  }
+
 }
