@@ -62,6 +62,7 @@ import { SimilarTvSeriesComponent } from './similar-tv-series/similar-tv-series.
 import { MainRandomKidsComponent } from './main-random-kids/main-random-kids.component';
 import { TopRatedKidMoviesComponent } from './top-rated-kid-movies/top-rated-kid-movies.component';
 import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movies.component';
+import { MyListComponent } from './my-list/my-list.component';
 
 
 @NgModule({
@@ -111,6 +112,7 @@ import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movi
     MainRandomKidsComponent,
     TopRatedKidMoviesComponent,
     PopularKidMoviesComponent,
+    MyListComponent,
   ],
   imports: [
     BrowserModule,

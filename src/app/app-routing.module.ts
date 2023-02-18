@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { KidsComponent } from './kids/kids.component';
 import { LoginComponent } from './login/login.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+import { MyListComponent } from './my-list/my-list.component';
 import { RegisterComponent } from './register/register.component';
 import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.component';
 import { TvseriesComponent } from './tvseries/tvseries.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'tvseries', component: TvseriesComponent},
   { path: 'kids', component: KidsComponent},
+  { path: 'mylist', component: MyListComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'moviedetails/:id', component: MoviedetailsComponent},

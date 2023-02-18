@@ -1,0 +1,10 @@
+<div class="home-main-class">
+    <app-header></app-header>
+    <div class="login-ui" *ngIf="(fireAuth.user | async)" >
+        <p>login</p>
+    </div>
+    <div class="logout-ui" *ngIf="!(fireAuth.user | async)" >
+        <img src="assets\resources\image\login-img.png" alt="ggg" style="width: 100%;">
+    </div>
+</div>
+    <router-outlet></router-outlet>
