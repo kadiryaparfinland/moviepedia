@@ -47,7 +47,7 @@
                   <div class="top-rated-movies-main-scroll-list">
                       <div class="top-rated-movies-main-content" *ngFor="let tvSeries of topRatedTvSeriesList">
               
-                          <div class="card-design" (click)="goToMovieDetails(tvSeries.id)">
+                          <div class="card-design" (click)="goToTvSeriesDetails(tvSeries.id)">
                               <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{tvSeries.poster_path}}" alt="Card image cap">
                               <div class="card-body">
                                 <h6 class="card-title">User Score: {{tvSeries.vote_average}}</h6>

@@ -112,6 +112,11 @@ export class MyListComponent implements OnInit {
   }
 
   goToMovieDetails(id: number){
+    this.router.navigate(['moviedetails', id]);
+    this.router.navigate(['moviedetails', id]).then(page => {window.scrollTo(0, 0); })
+  }
+
+  goToTvSeriesDetails(id: number){
     this.router.navigate(['tv-series-details', id]);
     this.router.navigate(['tv-series-details', id]).then(page => {window.scrollTo(0, 0); })
   }
