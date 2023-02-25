@@ -64,7 +64,6 @@ import { TopRatedKidMoviesComponent } from './top-rated-kid-movies/top-rated-kid
 import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movies.component';
 import { MyListComponent } from './my-list/my-list.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -131,6 +130,7 @@ import { MyListComponent } from './my-list/my-list.component';
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
+    
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

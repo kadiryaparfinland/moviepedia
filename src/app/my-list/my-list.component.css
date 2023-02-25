@@ -3,6 +3,82 @@
     margin-right: 100px;
 }
 
+.top-rated-movies-main-scroll-list{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+}
+
+.card-design{
+    margin-right: 10px;
+    cursor: pointer;
+    width: 12rem; 
+    height: 25rem;
+}
+
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
+}
+.title-card-title{
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .card-design{
+        margin-right: 10px;
+        width: 10rem;
+        height: 21rem;
+    }
+
+    .card-title{
+        font-size: 14px;
+    }
+
+    .top-rated-movies-main-scroll-list{
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .card-design{
+        margin-right: 10px;
+        width: 10rem;
+        height: 21rem;
+    }
+
+    .card-title{
+        font-size: 14px;
+    }
+
+    .top-rated-movies-main-scroll-list{
+        margin-bottom: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+
+    .card-design{
+        margin-right: 10px;
+        width: 8rem;
+        height: 18rem;
+    }
+
+    .card-title{
+        font-size: 14px;
+    }
+
+    .top-rated-movies-main-scroll-list{
+        margin-bottom: 0px;
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
     .home-main-class{
         margin-left: 25px;
