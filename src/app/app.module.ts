@@ -63,6 +63,7 @@ import { MainRandomKidsComponent } from './main-random-kids/main-random-kids.com
 import { TopRatedKidMoviesComponent } from './top-rated-kid-movies/top-rated-kid-movies.component';
 import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movies.component';
 import { MyListComponent } from './my-list/my-list.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +113,7 @@ import { MyListComponent } from './my-list/my-list.component';
     TopRatedKidMoviesComponent,
     PopularKidMoviesComponent,
     MyListComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

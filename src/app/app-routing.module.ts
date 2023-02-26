@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MyListComponent } from './my-list/my-list.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
 import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.component';
 import { TvseriesComponent } from './tvseries/tvseries.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'mylist', component: MyListComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'search', component: SearchComponent},
   { path: 'moviedetails/:id', component: MoviedetailsComponent},
   { path: 'tv-series-details/:id', component: TvSeriesDetailsComponent},
 ];

@@ -26,7 +26,9 @@ export class PopularTvSeriesComponent implements OnInit {
       this.topRatedMovies = movies;
 
       for (let item of this.topRatedMovies.results) {
-        this.topRatedMoviesList.push(item);
+        if (item.poster_path != null){
+          this.topRatedMoviesList.push(item);
+          }
       } 
 
       this.movieId = this.topRatedMoviesList[0].id;

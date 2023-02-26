@@ -62,16 +62,18 @@ export class MyListComponent implements OnInit {
         .collection('movie_list')
         .get()
         .subscribe((querySnapshot) => {
-
-          querySnapshot.forEach((doc) => {
-            this.movieList.push(doc.data()['movieId'].toString());
-          } );
-
-          if(this.movieList.isEmpty) {
+          if(querySnapshot.empty) {
             this.isMovieListEmpty = true;
-          } 
-          else {
+          }
+          else{
             this.isMovieListEmpty = false;
+            querySnapshot.forEach((doc) => {
+              this.movieList.push(doc.data()['movieId'].toString());
+            } );
+          }
+          
+
+          if(!this.movieList.isEmpty) {
             for(let i = 0; i < this.movieList.length; i++) {
               this.myDataService.getMovieDetails(this.movieList[i]).subscribe((movie) => {
                 this.movie = movie;
@@ -89,16 +91,19 @@ export class MyListComponent implements OnInit {
         .collection('tv_series_list')
         .get()
         .subscribe((querySnapshot) => {
-
-          querySnapshot.forEach((doc) => {
-            this.tvSeriesList.push(doc.data()['movieId'].toString());
-          } );
-
-          if(this.tvSeriesList.isEmpty) {
+          if(querySnapshot.empty) {
             this.isTvSeriesListEmpty = true;
-          } 
-          else {
+          }
+          else{
             this.isTvSeriesListEmpty = false;
+            querySnapshot.forEach((doc) => {
+              this.tvSeriesList.push(doc.data()['movieId'].toString());
+            } );
+          }
+
+          if(!this.tvSeriesList.isEmpty) {
+            //this.isTvSeriesListEmpty = false;
+            //console.log("tv series list is not empty");
             for(let i = 0; i < this.tvSeriesList.length; i++) {
               this.myDataService.getTvSeriesDetails(this.tvSeriesList[i]).subscribe((tvSeries) => {
                 this.tvSeries = tvSeries;
