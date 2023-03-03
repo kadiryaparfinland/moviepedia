@@ -9,13 +9,16 @@
     />
     <div class="search-area">
       <div class="input-group mb-3 search-area-input">
+        <form [formGroup]="searchForm">
         <input
+        formControlName="search"
           type="text"
           class="form-control"
           placeholder="Search for a movie, tv show, person"
           aria-label="search for a movie, tv show, person"
           aria-describedby="basic-addon2"
         />
+      </form>
         <div class="input-group-append">
           <button
             class="btn btn-outline-secondary search-area-button"
@@ -32,7 +35,8 @@
         name="options"
         id="option1"
         autocomplete="off"
-        checked  
+        checked
+        (click)=toggleSelectedMovie()  
       />
       <label class="btn btn-secondary radio-button" for="option1">Movie</label>
 
@@ -42,6 +46,7 @@
         name="options"
         id="option2"
         autocomplete="off"
+        (click)=toggleSelectedTv()
       />
       <label class="btn btn-secondary radio-button" for="option2">Tv Show</label>
 
@@ -51,9 +56,73 @@
         name="options"
         id="option3"
         autocomplete="off"
+        (click)=toggleSelectedPerson()
       />
       <label class="btn btn-secondary radio-button" for="option3">Person</label>
 
     </div>
   </div>
+
+  <div *ngIf="isSelectedMovie">
+  <div *ngIf="!isSearchResultEmptyForMovie" class="top-rated-movies-main-scroll-list">
+    <div class="top-rated-movies-main-content" *ngFor="let movie of movieList">
+
+        <div class="card-design" (click)="goToMovieDetails(movie.id)">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">User Score: {{movie.vote_average}}</h6>
+              <h6 class="card-title">Date: {{movie.release_date}}</h6>
+              <h6 class="card-title title-card-title">{{movie.title}}</h6>
+            </div>
+        </div>
+
+    
+    </div>
+</div>
+<div *ngIf="isSearchResultEmptyForMovie">
+  <h1>No Result Found</h1>
+</div>
+</div>
+
+<div *ngIf="isSelectedTv">
+  <div *ngIf="!isSearchResultEmptyForTv" class="top-rated-movies-main-scroll-list">
+    <div class="top-rated-movies-main-content" *ngFor="let tv of tvList">
+
+        <div class="card-design" (click)="goToMovieDetails(tv.id)">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{tv.poster_path}}" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">User Score: {{tv.vote_average}}</h6>
+              <h6 class="card-title">Date: {{tv.first_air_date}}</h6>
+              <h6 class="card-title title-card-title">{{tv.name}}</h6>
+            </div>
+        </div>
+
+    
+    </div>
+</div>
+<div *ngIf="isSearchResultEmptyForTv">
+  <h1>No Result Found</h1>
+</div>
+</div>
+
+<div *ngIf="isSelectedPerson">
+  <div *ngIf="!isSearchResultEmptyForPerson" class="top-rated-movies-main-scroll-list">
+    <div class="top-rated-movies-main-content" *ngFor="let cast of personList">
+
+        <div class="card card-design" style="width: 10rem; height: 24rem;"(click)="goToMovieDetails(cast.id)">
+            <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{cast.name}}</h5>
+              <p class="card-text">{{cast.character}}</p>
+            </div>
+        </div>
+
+    
+    </div>
+</div>
+<div *ngIf="isSearchResultEmptyForPerson">
+  <h1>No Result Found</h1>
+</div>
+</div>
+
 </div>
