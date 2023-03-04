@@ -30,7 +30,10 @@ export class SimilarTvSeriesComponent implements OnInit {
       this.topRatedMovies = movies;
 
       for (let item of this.topRatedMovies.results) {
-        this.topRatedMoviesList.push(item);
+        if (item.poster_path != null){
+          this.topRatedMoviesList.push(item);
+        }
+        
       } 
 
     });

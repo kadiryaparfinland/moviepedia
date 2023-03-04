@@ -34,14 +34,25 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.toggleSelectedMovie();
-    this.toggleSelectedTv();
-    this.toggleSelectedPerson();
+    if(this.isSelectedMovie){
+      this.toggleSelectedMovie();
+    }
+    else if(this.isSelectedTv){
+      this.toggleSelectedTv();
+    }
+    else if(this.isSelectedPerson){
+      this.toggleSelectedPerson();  
+    }
   }
 
   goToMovieDetails(id: number){
     this.router.navigate(['moviedetails', id]);
     this.router.navigate(['moviedetails', id]).then(page => {window.scrollTo(0, 0); })
+  }
+
+  goToTvDetails(id: number){
+    this.router.navigate(['tv-series-details', id]);
+    this.router.navigate(['tv-series-details', id]).then(page => {window.scrollTo(0, 0); })
   }
 
   toggleSelectedMovie(){
