@@ -157,4 +157,7 @@ export class MyDataService {
     return this.http.get('https://api.themoviedb.org/3/search/person?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US&query='+searchWord+'&page=1&include_adult=false');
   }
 
+  getPersonInfo(castId: string) : Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/person/'+castId+'?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
 }
