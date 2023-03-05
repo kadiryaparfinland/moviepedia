@@ -9,7 +9,6 @@
 
 .search-area{
     top: 50%;
-    width: 100%;
     position: absolute;
     z-index: 1;
     
@@ -20,9 +19,12 @@
 .search-area-input{
     height: 50px;
 }
+.input-design{
+    width: 500px;
+}
 
 .search-area-button{
-    height: 50px;
+    height: 40px;
     background-color: #032541;
     color: white;
 }
@@ -68,6 +70,21 @@ input:checked + label{
 
 @media only screen and (max-width: 768px) {
 
+    .home-main-class{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .search-area{
+        top: 40%;
+        
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .input-design{
+        width: 300px;
+    }
+    
     .card-design{
         margin-right: 10px;
         width: 10rem;
@@ -85,6 +102,21 @@ input:checked + label{
 
 @media only screen and (max-width: 425px) {
 
+    .home-main-class{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .search-area{
+        top: 10%;
+        
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .input-design{
+        width: 250px;
+    }
+
     .card-design{
         margin-right: 10px;
         width: 8rem;
@@ -101,26 +133,3 @@ input:checked + label{
 }
 
 
-@media only screen and (max-width: 768px) {
-    .home-main-class{
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-
-}
-
-@media only screen and (max-width: 1024px) {
-    .home-main-class{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-}
-
-@media only screen and (max-width: 425px) {
-    .home-main-class{
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-
-}
