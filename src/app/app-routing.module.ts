@@ -5,6 +5,7 @@ import { KidsComponent } from './kids/kids.component';
 import { LoginComponent } from './login/login.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MyListComponent } from './my-list/my-list.component';
+import { PersonComponent } from './person/person.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { TvSeriesDetailsComponent } from './tv-series-details/tv-series-details.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'moviedetails/:id', component: MoviedetailsComponent},
   { path: 'tv-series-details/:id', component: TvSeriesDetailsComponent},
+  { path: 'person/:id', component: PersonComponent},
 ];
 
 @NgModule({

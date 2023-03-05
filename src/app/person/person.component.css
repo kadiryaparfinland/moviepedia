@@ -1,0 +1,36 @@
+.main-body{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.main-container{
+    text-align: center;
+    margin-top: 20px;
+}
+.card-design{
+    display: inline-table;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 12rem; 
+    height: 25rem;
+}
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
+}
+.title-card-title{
+    font-weight: bold;
+}
+
+.main-info{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.biograpy-title{
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}

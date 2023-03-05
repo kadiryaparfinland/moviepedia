@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataService } from '../services/my-data.service';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -20,7 +20,7 @@ export class MovieCastComponent  implements OnInit {
   castImagePath: string = 'https://image.tmdb.org/t/p/w500';
   
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private myDataService: MyDataService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private myDataService: MyDataService, private router: Router) { }
 
   ngOnInit() {
 
@@ -46,8 +46,9 @@ export class MovieCastComponent  implements OnInit {
     });
   }
   
-  goToMovieDetails(id: number){
-    //this.route.navigate(['moviedetails', id]);
+  goToPersonDetails(id: number){
+    this.router.navigate(['person', id]);
+    this.router.navigate(['person', id]).then(page => {window.scrollTo(0, 0); })
   }
 
 

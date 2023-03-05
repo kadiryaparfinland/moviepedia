@@ -9,7 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SimilarMoviesComponent implements OnInit {
 
-  movieId: string = '';
+  castId: string = '1253360';
+  movieId: string = '631842';
   myMovies: any;
   topRatedMovies: any = [];
   topRatedMoviesList: any = [];
@@ -23,7 +24,7 @@ export class SimilarMoviesComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.movieId = this.route.snapshot.params['id'];
+    //this.movieId = this.route.snapshot.params['id'];
 
     this.myDataService.getSimilarMovies(this.movieId).subscribe((movies) => {
 

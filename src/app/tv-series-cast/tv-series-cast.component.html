@@ -6,7 +6,7 @@
     <div class="top-rated-movies-main-scroll-list">
         <div class="top-rated-movies-main-content" *ngFor="let cast of movieCastsList">
 
-            <div class="card card-design" style="width: 10rem; height: 24rem;"(click)="goToMovieDetails(cast.id)">
+            <div class="card card-design" style="width: 10rem; height: 24rem;"(click)="goToPersonDetails(cast.id)">
                 <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{cast.name}}</h5>

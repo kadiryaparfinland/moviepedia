@@ -64,6 +64,7 @@ import { TopRatedKidMoviesComponent } from './top-rated-kid-movies/top-rated-kid
 import { PopularKidMoviesComponent } from './popular-kid-movies/popular-kid-movies.component';
 import { MyListComponent } from './my-list/my-list.component';
 import { SearchComponent } from './search/search.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +115,7 @@ import { SearchComponent } from './search/search.component';
     PopularKidMoviesComponent,
     MyListComponent,
     SearchComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,

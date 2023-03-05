@@ -55,6 +55,11 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['tv-series-details', id]).then(page => {window.scrollTo(0, 0); })
   }
 
+  goToPersonDetails(id: number){
+    this.router.navigate(['person', id]);
+    this.router.navigate(['person', id]).then(page => {window.scrollTo(0, 0); })
+  }
+
   toggleSelectedMovie(){
     this.isSelectedMovie = true;
     this.isSelectedTv = false;
