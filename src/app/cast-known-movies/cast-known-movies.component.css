@@ -1,0 +1,29 @@
+.main-container{
+    
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.top-rated-movies-main-scroll-list{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.card-design{
+    margin-right: 10px;
+    cursor: pointer;
+    width: 12rem; 
+    height: 27rem;
+}
+
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
+}
+.title-card-title{
+    font-weight: bold;
+}

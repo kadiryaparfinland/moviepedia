@@ -1,0 +1,50 @@
+<div class="main-container">
+    <h4 class="biograpy-title">Known For</h4>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Movies</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Tv Series</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+            <!-- this part is for the cast known movies -->
+            <div class="top-rated-movies-main-scroll-list">
+                <div class="top-rated-movies-main-content" *ngFor="let movie of topRatedMoviesList">
+        
+                    <div class="card-design" (click)="goToMovieDetails(movie.id)">
+                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h6 class="card-title">User Score: {{movie.vote_average}}</h6>
+                          <h6 class="card-title">Date: {{movie.release_date}}</h6>
+                          <h6 class="card-title title-card-title">{{movie.title}}</h6>
+                        </div>
+                    </div>
+        
+                
+                </div>
+            </div>
+            <!-- this part is for the cast known movies -->
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+            <!-- this part is for the cast known tv series -->
+            <div class="top-rated-movies-main-scroll-list">
+                <div class="top-rated-movies-main-content" *ngFor="let tv of topRatedTvSeriesList">
+        
+                    <div class="card-design" (click)="goToTvDetails(tv.id)">
+                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{tv.poster_path}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h6 class="card-title">User Score: {{tv.vote_average}}</h6>
+                          <h6 class="card-title">Date: {{tv.first_air_date}}</h6>
+                          <h6 class="card-title title-card-title">{{tv.name}}</h6>
+                        </div>
+                    </div>
+        
+                
+                </div>
+            </div>
+            <!-- this part is for the cast known tv series -->
+        </div>
+      </div>
+
+</div>

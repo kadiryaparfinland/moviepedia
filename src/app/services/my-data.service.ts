@@ -160,4 +160,11 @@ export class MyDataService {
   getPersonInfo(castId: string) : Observable<any> {
     return this.http.get('https://api.themoviedb.org/3/person/'+castId+'?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
   }
+  getPersonKnownTvs(castId: string) : Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/person/'+castId+'/tv_credits?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
+
+  getPersonKnownMovies(castId: string) : Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/person/'+castId+'/movie_credits?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
+  }
 }
