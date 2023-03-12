@@ -28,7 +28,7 @@ export class MoviedetailsComponent implements OnInit {
   movieId: string = '';
   
   movieTitle: string = '';
-  moviePosterPath: string = 'https://image.tmdb.org/t/p/w500';
+  moviePosterPath: string = '';
   movieBackdropPath: string = 'https://image.tmdb.org/t/p/w500';
   movieOverview: string = '';
   movieReleaseDate: string = '';
@@ -92,7 +92,7 @@ export class MoviedetailsComponent implements OnInit {
 
       this.movie = movie;
       this.movieTitle = this.movie.title;
-      this.moviePosterPath += this.movie.poster_path;
+      this.moviePosterPath = 'https://image.tmdb.org/t/p/w500'+this.movie.poster_path;
       this.movieBackdropPath += this.movie.backdrop_path;
       this.movieOverview = this.movie.overview;
       this.movieReleaseDate = this.movie.release_date;

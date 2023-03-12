@@ -66,6 +66,7 @@ import { MyListComponent } from './my-list/my-list.component';
 import { SearchComponent } from './search/search.component';
 import { PersonComponent } from './person/person.component';
 import { CastKnownMoviesComponent } from './cast-known-movies/cast-known-movies.component';
+import { WatchOnlineComponent } from './watch-online/watch-online.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { CastKnownMoviesComponent } from './cast-known-movies/cast-known-movies.
     SearchComponent,
     PersonComponent,
     CastKnownMoviesComponent,
+    WatchOnlineComponent,
   ],
   imports: [
     BrowserModule,
