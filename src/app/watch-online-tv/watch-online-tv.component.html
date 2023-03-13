@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div>
+        <h4>
+            Watch Online
+        </h4>
+    </div>
+    
+    <div>
+        <div class="dropdown-and-providers">
+            <div class="providers-info">
+                <p>{{movieName}}: You can find online watch providers' information in your country below;</p>
+            </div>
+            <div>
+                <div class="dropdown-list">
+                    <div class="dropdown">
+                        <div ngbDropdown class="d-inline-block">
+                            <select ngbDropdown class="form-control" (change)="onSelect($event)">
+                                <option value="{{defaultSelectedCountry}}">{{defaultSelectedCountry}}</option>
+                                <option ngbDropdownItem *ngFor="let region of regions" [value]="region.iso_3166_1">
+                                {{ region.english_name }}</option>
+                            </select>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <div class="home-main-class">
+        <div>
+            <img class="poster-img" src="{{moviePosterPath}}" alt="">
+        </div>
+        <div class="main-providers">
+            <div class="title">
+                Stream
+            </div>
+            <div *ngIf="watchListFlatrate?.length" class="logo-div">
+                <img *ngFor="let item of watchListFlatrate" class="logo" src="https://image.tmdb.org/t/p/w500{{item.logo_path}}" alt="">
+            </div>
+            <div *ngIf="!watchListFlatrate?.length">
+                <p style="color: white; margin-left: 40px;">Not available in your country</p>
+            </div>   
+
+            <div class="title">
+                Rent
+            </div>
+            <div *ngIf="watchListRent?.length" class="logo-div">
+                <img *ngFor="let item of watchListRent" class="logo" src="https://image.tmdb.org/t/p/w500{{item.logo_path}}" alt="">
+            </div> 
+            <div *ngIf="!watchListRent?.length">
+                <p style="color: white; margin-left: 40px;">Not available in your country</p>
+            </div>  
+
+            <div class="title">
+                Buy
+            </div>
+            <div *ngIf="watchListBuy?.length"  class="logo-div">
+                <img *ngFor="let item of watchListBuy" class="logo" src="https://image.tmdb.org/t/p/w500{{item.logo_path}}" alt="">
+            </div> 
+            <div *ngIf="!watchListBuy?.length">
+                <p style="color: white; margin-left: 40px;">Not available in your country</p>
+            </div> 
+        </div>
+        
+    </div>
+    
+</div>
+    
+    
+</div>

@@ -172,6 +172,10 @@ export class MyDataService {
    return this.http.get('https://api.themoviedb.org/3/movie/'+movieId+'/watch/providers?api_key=dc92a7524c83f242a3237b2222941f00');
   }
 
+  getOnlineWatchListTv(movieId: string) : Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/tv/'+movieId+'/watch/providers?api_key=dc92a7524c83f242a3237b2222941f00');
+   }
+
   getCountryList(){
     return this.http.get('https://api.themoviedb.org/3/watch/providers/regions?api_key=dc92a7524c83f242a3237b2222941f00&language=en-US');
    }
